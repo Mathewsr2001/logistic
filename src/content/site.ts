@@ -91,5 +91,11 @@ export const site = {
     },
   ],
 
+  /** Bloque de cabecera · sección catálogo / galería (#galeria). */
+  galleryHeadingKicker: "Portafolio institucional",
+  galleryHeadingTitle: "Catálogo de referencias de producción",
+  galleryHeadingLead:
+    "Documentación visual de lotes reales: uniformidad ceremonial, piezas operativas y detalle en insignias. La misma claridad expositiva que esperas en catálogos sectoriales de alto nivel, aplicada a tus entregas en Ecuador.",
+
   brochurePdf: "/docs/logistic-catalogo.pdf",
 } as const;

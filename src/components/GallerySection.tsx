@@ -5,17 +5,22 @@ import { galleryImages } from "@/content/gallery";
 
 export function GallerySection() {
   return (
-    <section id="galeria" className="scroll-mt-36 border-neutral-100 bg-transparent px-4 pb-20 pt-14 sm:px-6 lg:scroll-mt-40 lg:px-12 lg:pb-28 lg:pt-10">
+    <section id="galeria" className="scroll-mt-36 border-neutral-100 bg-transparent px-4 pb-20 pt-14 sm:px-6 lg:scroll-mt-40 lg:px-12 lg:pb-28 lg:pt-12">
       <div className="mx-auto max-w-[1400px]">
-        <div className="max-w-[46rem]">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.4em] text-brand-mutedLight">
-            Catálogo curado · inspiración institucional
+        <header className="max-w-[56rem] rounded-r-2xl border-l-[5px] border-brand-accent bg-gradient-to-r from-sky-50/90 via-transparent to-transparent py-2 pl-6 pr-4 md:py-3 md:pl-9 md:pr-6">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.42em] text-brand-accent">
+            {site.galleryHeadingKicker}
           </p>
-          <p className="mt-6 text-xl font-semibold text-neutral-900 md:text-[1.42rem]">
-            Presentación fotográfica con el mismo nivel de claridad utilizado por referencias contemporáneas
-            tipo{" "}
+          <h2 className="mt-4 font-display text-[clamp(1.85rem,4vw,2.75rem)] font-bold leading-[1.15] tracking-tight text-neutral-950">
+            {site.galleryHeadingTitle}
+          </h2>
+          <p className="mt-6 max-w-[46rem] text-[1.0625rem] leading-relaxed text-brand-mutedLight md:text-[1.125rem]">
+            {site.galleryHeadingLead}
+          </p>
+          <p className="mt-5 max-w-[46rem] text-[0.8125rem] leading-relaxed text-neutral-500">
+            Referencia de presentación internacional:{" "}
             <Link
-              className="text-neutral-950 underline underline-offset-4 hover:text-brand-accentHover"
+              className="font-medium text-neutral-700 underline decoration-neutral-300 underline-offset-4 transition hover:text-brand-accentHover"
               href="https://flyingcross.com/collections/police-uniforms"
               target="_blank"
               rel="noreferrer noopener"
@@ -24,15 +29,25 @@ export function GallerySection() {
             </Link>
             {" · "}
             <Link
-              className="text-neutral-950 underline underline-offset-4 hover:text-brand-accentHover"
+              className="font-medium text-neutral-700 underline decoration-neutral-300 underline-offset-4 transition hover:text-brand-accentHover"
               href="https://www.blauer.com/"
               target="_blank"
               rel="noreferrer noopener"
             >
               Blauer
-            </Link>{" "}
-            o distribuidores similares, adaptadas a tus lotes Ecuador.
+            </Link>
+            {" · "}
+            <Link
+              className="font-medium text-neutral-700 underline decoration-neutral-300 underline-offset-4 transition hover:text-brand-accentHover"
+              href="https://policeuniform.com/"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              Police&nbsp;Uniform
+            </Link>
+            .
           </p>
+
           <div className="mt-10 flex flex-wrap gap-4">
             <Link
               href={site.instagram.url}
@@ -51,9 +66,9 @@ export function GallerySection() {
               Descargar ficha institucional
             </Link>
           </div>
-        </div>
+        </header>
 
-        <div className="mt-14 grid gap-10 sm:grid-cols-2 xl:grid-cols-4">
+        <div className="mt-16 grid gap-10 sm:grid-cols-2 xl:grid-cols-4">
           {galleryImages.map((item, idx) => (
             <article
               key={item.src}
@@ -62,7 +77,7 @@ export function GallerySection() {
               <div className="relative aspect-[10/13] bg-[#eaecef]">
                 <span
                   aria-hidden
-                  className="absolute right-4 top-4 inline-flex items-center gap-2 rounded-full border border-amber-200/75 bg-white/95 px-3 py-[0.375rem] text-[11px] font-semibold text-amber-700 shadow-[0_8px_20px_-10px_rgba(12,74,110,0.35)] ring-1 ring-black/10"
+                  className="absolute right-4 top-4 inline-flex items-center gap-2 rounded-full border border-amber-200/75 bg-white/95 px-3 py-[0.375rem] text-[11px] font-semibold text-amber-700 shadow-[0_8px_20px_-10px_rgba(12,74,110,0.35)] ring-1 ring-neutral-950/10"
                 >
                   <span aria-hidden className="text-base leading-none text-amber-500">
                     ★
