@@ -1,0 +1,55 @@
+export const site = {
+  name: "Logistic Fire & Rescue",
+  legalName: "Logistic Fire & Rescue",
+  username: "@logistic_ec",
+  tagline:
+    "Empresa de confección de uniformes, gorras e insignias para instituciones y fuerzas del orden.",
+  motto: "Seriedad y cumplimiento",
+  country: "Ecuador",
+  shipping: "Envíos a todo el país",
+
+  instagram: {
+    handle: "logistic_ec",
+    url: "https://instagram.com/logistic_ec",
+  },
+  facebook: {
+    pageName: "Logistic Fire & Rescue",
+    url: "https://www.facebook.com/LOGISTIC-fire-rescue-161094947272414",
+  },
+
+  phones: [
+    { label: "Línea 1", tel: "+5932341933", display: "2341-933" },
+    { label: "Línea 2", tel: "+5932071594", display: "2071-594" },
+  ],
+
+  services: [
+    {
+      title: "Uniformes militares y policiales",
+      description:
+        "Confección a medida institucional, acabados formales y piezas tácticas con control de calidad.",
+    },
+    {
+      title: "Bomberos y rescate",
+      description:
+        "Prendas de trabajo robustas, alta visibilidad y equipamiento alineado a normas operativas.",
+    },
+    {
+      title: "Gorras e insignias",
+      description:
+        "Bordados, galones, escudos y detalles metálicos con presentación ceremonial impecable.",
+    },
+    {
+      title: "Ropa institucional e industrial",
+      description:
+        "Uniformes corporativos, trabajo y seguridad industrial con durabilidad y estética uniforme.",
+    },
+  ],
+
+  galleryCategories: [
+    "Gorras y boinas ceremonial",
+    "Uniformidad formal",
+    "Equipo táctico y operativo",
+    "Insignias y detalles en metal",
+    "Entregas e instalaciones",
+  ],
+} as const;
