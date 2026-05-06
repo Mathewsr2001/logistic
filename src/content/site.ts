@@ -68,6 +68,12 @@ export const site = {
     { label: "Línea 2", tel: "+5932071594", display: "2071-594" },
   ],
 
+  /** Cabecera · #servicios (un solo bloque). */
+  servicesHeadingKicker: "Capacidades integradas",
+  servicesHeadingTitle: "Departamentos de confección institucional",
+  servicesHeadingLead:
+    "Un único taller coordina muestras, escalado de lote y logística nacional: formal, operativo y ceremonial con la misma exigencia de calidad.",
+
   services: [
     {
       title: "Uniformes militares y policiales",

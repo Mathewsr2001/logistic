@@ -3,54 +3,72 @@ import { site } from "@/content/site";
 
 export function ServicesSection() {
   return (
-    <section id="servicios" className="scroll-mt-32 border-neutral-100 bg-neutral-50 px-4 py-24 sm:px-6 lg:scroll-mt-40 lg:px-12 lg:py-32">
+    <section id="servicios" className="scroll-mt-32 bg-neutral-50 px-4 py-24 sm:px-6 lg:scroll-mt-40 lg:px-12 lg:py-28">
       <div className="mx-auto max-w-[1400px]">
-        <div className="max-w-[44rem]">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.4em] text-brand-mutedLight">
-            Departamentos y capacidades tácticas
-          </p>
-          <h2 className="mt-8 text-[2.2rem] font-bold leading-snug tracking-tight text-neutral-950 md:text-[2.85rem]">
-            Operamos como tus socios industriales cuando el proyecto exige nivel protocolario y precisión táctica
-          </h2>
-          <p className="mt-6 text-[1.0625rem] leading-relaxed text-brand-mutedLight">
-            Estructuras similares a los PLP de colecciones instituciones globales pero con coordinación ejecutiva desde
-            Ecuador para que cada muestra llegue ordenada donde la jerarquía lo exige.
-          </p>
-        </div>
+        <article className="overflow-hidden rounded-[2rem] border border-neutral-200/90 bg-white shadow-[0_40px_100px_-60px_rgba(15,52,110,0.35)] ring-1 ring-neutral-950/[0.04]">
+          {/* Cabecera del panel unificado */}
+          <div className="relative border-b border-neutral-100 bg-gradient-to-br from-sky-50 via-white to-neutral-50 px-6 py-10 sm:px-10 lg:px-14 lg:py-12">
+            <div
+              aria-hidden
+              className="pointer-events-none absolute right-0 top-0 h-48 w-48 rounded-full bg-brand-accent/15 blur-[80px]"
+            />
+            <div className="relative max-w-[52rem]">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.38em] text-brand-accent">
+                {site.servicesHeadingKicker}
+              </p>
+              <h2 className="mt-5 font-display text-[clamp(1.65rem,3.2vw,2.35rem)] font-bold leading-tight tracking-tight text-neutral-950">
+                {site.servicesHeadingTitle}
+              </h2>
+              <p className="mt-5 text-[1.0625rem] leading-relaxed text-brand-mutedLight md:text-[1.125rem]">
+                {site.servicesHeadingLead}
+              </p>
+            </div>
+          </div>
 
-        <div className="mt-16 grid gap-5 lg:grid-cols-12">
-          <article className="relative overflow-hidden rounded-[2.2rem] border border-neutral-200 bg-gradient-to-br from-brand-panel via-neutral-50 to-neutral-100 p-11 shadow-[0_42px_90px_-60px_rgba(7,54,136,0.55)] lg:col-span-7">
-            <div className="absolute inset-x-24 top-[-30%] h-48 rounded-full bg-brand-accent/25 blur-[150px]" />
-            <span className="text-[11px] font-semibold uppercase tracking-[0.32em] text-brand-accent">
-              Departamento institucional
-            </span>
-            <h3 className="mt-6 font-display text-3xl font-bold text-neutral-950 md:text-[2rem]">{site.services[0]!.title}</h3>
-            <p className="mt-5 max-w-2xl text-base leading-relaxed text-brand-mutedLight">{site.services[0]!.description}</p>
+          {/* Líneas de capacidad: lectura vertical única */}
+          <ul className="divide-y divide-neutral-100">
+            {site.services.map((svc, idx) => (
+              <li
+                key={svc.title}
+                className="group transition-colors hover:bg-gradient-to-r hover:from-sky-50/60 hover:to-transparent"
+              >
+                <div className="flex flex-col gap-6 px-6 py-9 sm:flex-row sm:items-start sm:gap-10 sm:px-10 lg:px-14 lg:py-10">
+                  <div className="flex shrink-0 items-center gap-4 sm:flex-col sm:items-start sm:gap-3">
+                    <span className="inline-flex h-[3.25rem] min-w-[3.25rem] items-center justify-center rounded-2xl bg-gradient-to-br from-brand-navyDeep to-[#123a68] text-[13px] font-bold tabular-nums tracking-wider text-white shadow-[0_12px_28px_-12px_rgba(56,182,255,0.45)] ring-2 ring-white/90">
+                      {String(idx + 1).padStart(2, "0")}
+                    </span>
+                    {idx === 0 ? (
+                      <span className="hidden text-[10px] font-semibold uppercase tracking-[0.28em] text-brand-accent sm:inline">
+                        Prioridad institucional
+                      </span>
+                    ) : null}
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <h3 className="text-[1.25rem] font-semibold leading-snug text-neutral-950 md:text-[1.35rem]">
+                      {svc.title}
+                    </h3>
+                    <p className="mt-3 max-w-[52rem] text-[0.98rem] leading-relaxed text-brand-mutedLight md:text-[1.03rem]">
+                      {svc.description}
+                    </p>
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ul>
+
+          {/* Pie único */}
+          <div className="flex flex-col items-start justify-between gap-6 border-t border-neutral-100 bg-neutral-50/90 px-6 py-8 sm:flex-row sm:items-center sm:px-10 lg:px-14">
+            <p className="max-w-xl text-sm leading-relaxed text-neutral-600">
+              Coordinamos muestra piloto, fichas técnicas y ventanas de entrega con un solo interlocutor ejecutivo.
+            </p>
             <Link
               href="#contacto"
-              className="mt-10 inline-flex items-center justify-center rounded-full bg-neutral-900 px-9 py-3 text-[11px] font-semibold uppercase tracking-[0.26em] text-white transition hover:bg-neutral-800"
+              className="inline-flex w-full shrink-0 items-center justify-center rounded-full bg-neutral-900 px-10 py-3.5 text-[11px] font-semibold uppercase tracking-[0.22em] text-white transition hover:bg-neutral-800 sm:w-auto"
             >
               Planificación técnica
             </Link>
-          </article>
-
-          <article className="relative overflow-hidden rounded-[2rem] border border-neutral-200 bg-brand-panel p-10 shadow-[0_32px_80px_-60px_rgba(8,62,138,0.45)] lg:col-span-5">
-            <div className="absolute -right-4 top-[-18%] h-40 w-40 rounded-full bg-brand-gold/30 blur-[150px]" />
-            <span className="text-[11px] font-semibold uppercase tracking-[0.28em] text-amber-600">Rescate</span>
-            <h3 className="mt-6 text-[1.6rem] font-semibold text-neutral-950">{site.services[1]!.title}</h3>
-            <p className="mt-5 text-[0.95rem] leading-relaxed text-brand-mutedLight">{site.services[1]!.description}</p>
-          </article>
-
-          <article className="relative overflow-hidden rounded-[2rem] border border-neutral-200 bg-brand-panel p-10 shadow-[0_30px_80px_-60px_rgba(8,62,138,0.35)] lg:col-span-6">
-            <h3 className="text-[1.45rem] font-semibold text-neutral-950">{site.services[2]!.title}</h3>
-            <p className="mt-5 text-[0.95rem] leading-relaxed text-brand-mutedLight">{site.services[2]!.description}</p>
-          </article>
-
-          <article className="relative overflow-hidden rounded-[2rem] border border-neutral-200 bg-brand-panel p-10 shadow-[0_30px_80px_-60px_rgba(8,62,138,0.35)] lg:col-span-6">
-            <h3 className="text-[1.45rem] font-semibold text-neutral-950">{site.services[3]!.title}</h3>
-            <p className="mt-5 text-[0.95rem] leading-relaxed text-brand-mutedLight">{site.services[3]!.description}</p>
-          </article>
-        </div>
+          </div>
+        </article>
       </div>
     </section>
   );
