@@ -3,70 +3,81 @@ import { site } from "@/content/site";
 
 export function ContactSection() {
   return (
-    <section id="contacto" className="scroll-mt-28 bg-brand-bg">
-      <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8">
-        <div className="grid gap-14 lg:grid-cols-[1.08fr_minmax(0,0.95fr)] lg:gap-16">
+    <section id="contacto" className="scroll-mt-32 border-t border-white/5 bg-gradient-to-b from-brand-bg via-brand-bg to-brand-ink pb-28 pt-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
+        <div className="grid gap-14 lg:grid-cols-[1.06fr_minmax(0,0.94fr)] lg:gap-20">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-brand-accent">
+            <p className="text-xs font-semibold uppercase tracking-[0.38em] text-brand-accent">
               Coordinación directa
             </p>
-            <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-[2rem]">
-              Hablemos de su próximo lote o prototipo ceremonial
+            <h2 className="mt-6 font-display text-3xl font-extrabold tracking-tight text-white text-balance sm:text-[2.45rem]">
+              Estamos preparados para levantamientos de colección serios
             </h2>
-            <p className="mt-4 text-brand-muted leading-relaxed">
-              Comparte referencias institucionales, tallas proyectadas y plazos. Respondemos desde
-              canales públicos corporativos y confirmamos muestras antes de producir grandes
-              volúmenes.
+            <p className="mt-6 text-[1.05rem] leading-relaxed text-brand-muted">
+              Comparte manuales, tallas esperadas y plazos institucionales. Canalizamos la respuesta desde
+              canales públicos con el mismo nivel de formalidad esperado por tu cadena jerárquica.
             </p>
-            <ul className="mt-10 divide-y divide-white/10 rounded-3xl border border-brand-border bg-brand-surface px-8 py-6">
+
+            <ul className="mt-12 divide-y divide-white/10 rounded-[1.85rem] border border-white/10 bg-white/5 p-10 backdrop-blur-xl">
               {site.phones.map((phone) => (
-                <li key={phone.tel} className="flex flex-wrap items-center justify-between gap-3 py-4 first:pt-0 last:pb-0">
-                  <span className="text-sm uppercase tracking-[0.18em] text-brand-muted">
+                <li key={phone.tel} className="flex flex-wrap items-center justify-between gap-3 py-5 first:pt-0 last:pb-0">
+                  <span className="text-[11px] font-semibold uppercase tracking-[0.32em] text-brand-subtle">
                     {phone.label}
                   </span>
                   <a
                     href={`tel:${phone.tel}`}
-                    className="text-xl font-semibold text-white transition-colors hover:text-brand-accent"
+                    className="text-2xl font-semibold tracking-tight text-white transition-colors hover:text-brand-accent"
                   >
                     {phone.display}
                   </a>
                 </li>
               ))}
             </ul>
+
             <div className="mt-10 flex flex-wrap gap-4">
               <Link
                 href={site.facebook.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-full border border-brand-border bg-brand-surface px-5 py-2.5 text-sm font-semibold text-white hover:border-brand-accent/60 hover:text-brand-accent"
+                className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-7 py-3 text-sm font-semibold text-white transition hover:border-brand-accent/55 hover:bg-white/10"
               >
-                Facebook — {site.facebook.pageName}
+                Facebook · oficial
               </Link>
               <Link
                 href={site.instagram.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center rounded-full border border-transparent bg-brand-accent px-5 py-2.5 text-sm font-semibold text-brand-bg shadow-lg shadow-brand-accent/35 hover:bg-brand-accentHover"
+                className="inline-flex items-center justify-center rounded-full bg-brand-accent px-7 py-3 text-sm font-semibold text-brand-ink shadow-glow hover:bg-brand-accentHover"
               >
-                Mensaje Instagram
+                Mensajes Instagram
+              </Link>
+              <Link
+                href={site.brochurePdf}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center rounded-full px-4 py-3 text-sm font-semibold text-brand-accent underline-offset-4 hover:text-brand-accentHover hover:underline"
+              >
+                Brochure descargable
               </Link>
             </div>
           </div>
 
-          <aside className="rounded-[2rem] border border-brand-border bg-gradient-to-br from-brand-surface to-brand-bg p-9 shadow-[0_40px_120px_-72px_rgba(41,151,255,0.9)] lg:p-10">
-            <h3 className="text-xl font-semibold text-white">
-              Lista de chequeo rápido para cotizar mejor
-            </h3>
-            <ol className="mt-6 space-y-4 text-sm leading-relaxed text-brand-muted marker:text-brand-accent [&>li]:pl-6 [&>li]:list-decimal">
-              <li>Institución y manual de insignias vigente.</li>
-              <li>Cantidades aproximadas por talla / género.</li>
-              <li>Materiales deseados (mezclas, género institucional, etc.).</li>
-              <li>Fecha objetivo de entrega y ubicación en el país.</li>
-            </ol>
-            <p className="mt-8 rounded-2xl bg-brand-accent/15 px-4 py-4 text-xs text-brand-accent ring-1 ring-brand-accent/40">
-              {site.username} · {site.motto} · Producción enfocada en detalle ceremonial y trabajo
-              de campo para equipos de respuesta en {site.country}.
-            </p>
+          <aside className="rounded-[2.2rem] border border-white/10 bg-gradient-to-br from-brand-accent/35 via-brand-elevated to-brand-bg p-[1px] shadow-lift">
+            <div className="h-full rounded-[2.1rem] bg-brand-bg/90 p-10 backdrop-blur-2xl sm:p-12">
+              <h3 className="text-xl font-semibold text-white">Checklist de cotización ejecutiva</h3>
+              <ol className="mt-8 space-y-5 text-[0.95rem] leading-relaxed text-brand-muted marker:text-brand-accent [&>li]:list-decimal [&>li]:pl-5">
+                <li>Manual de insignias y normativa actualizada.</li>
+                <li>Matriz tallas / género / composición institucional.</li>
+                <li>Materiales requeridos o restricciones de color institucional.</li>
+                <li>Fecha objetivo y puntos logísticos de entrega dentro del país.</li>
+              </ol>
+              <div className="mt-12 rounded-[1.4rem] border border-brand-accent/40 bg-brand-accent/15 p-6 text-[0.9rem] leading-relaxed text-brand-accent">
+                <p className="font-semibold text-white">{site.username}</p>
+                <p className="mt-3 text-brand-muted">
+                  {site.motto}. Operación integral en {site.country}.
+                </p>
+              </div>
+            </div>
           </aside>
         </div>
       </div>

@@ -4,23 +4,36 @@
 
 :root {
   color-scheme: dark;
+  --ring: rgba(56, 182, 255, 0.45);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  @apply min-h-screen bg-brand-bg text-brand-muted antialiased;
+  @apply min-h-screen bg-brand-bg font-sans text-brand-muted antialiased;
 }
 
 ::selection {
-  @apply bg-brand-accent/70 text-brand-bg;
+  @apply bg-brand-accent/35 text-white;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
   *,
   ::before,
   ::after {
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
-    scroll-behavior: auto !important;
   }
 }

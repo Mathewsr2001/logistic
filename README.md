@@ -45,6 +45,28 @@ Pasos rápidos en [Vercel](https://vercel.com):
 
 Las integraciones gratuitas incluyen previews en cada push a `develop` y producción cuando integras merges a `main` (según la rama que marques como *Production Branch* en el proyecto).
 
+### Flujo diario recomendado
+
+```bash
+# Trabajar siempre desde develop para pruebas y previews gratuitas
+git checkout develop
+git pull origin develop
+
+# tras cambiar código
+git add -A && git commit -m "mensaje breve"
+git push origin develop
+```
+
+Cuando apruebas en la preview generada por Vercel (`develop`):
+
+```bash
+git checkout main
+git pull origin main
+git merge develop
+git push origin main          # Actualiza logistic-*.vercel.app en producción
+git checkout develop          # Sigues desarrollando
+```
+
 ## Subir código a GitHub (si aún no)
 
 ```bash
