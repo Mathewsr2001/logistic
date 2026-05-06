@@ -3,35 +3,38 @@ import { site } from "@/content/site";
 
 export function CatalogRail() {
   return (
-    <section className="relative border-b border-white/5 bg-brand-bg/85 py-12">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-wrap items-end justify-between gap-8">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.32em] text-brand-accent">Catálogo vivo</p>
-            <p className="mt-3 max-w-xl text-lg text-white">
-              Uniformidad para cada misión. Inspiración en las mejores vitrinas institucionales del
-              mundo, con producción y coordinación local en {site.country}.
+    <section className="border-b border-neutral-200 bg-[#eaeff5] px-4 py-12 sm:px-6 lg:px-12">
+      <div className="mx-auto max-w-[1400px]">
+        <div className="flex flex-wrap items-start justify-between gap-8">
+          <div className="max-w-3xl space-y-3">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.34em] text-brand-mutedLight">
+              LÍneas destacadas · estilo colección institucional
+            </p>
+            <p className="text-2xl font-semibold tracking-tight text-neutral-950 md:text-[1.7rem]">
+              Accesos rápidos a departamentos tácticos como en las vitrinas policiales internacionales, con
+              servicio cercano desde {site.country}.
             </p>
           </div>
           <Link
             href="#contacto"
-            className="hidden text-sm font-semibold text-brand-accent underline-offset-4 hover:text-brand-accentHover hover:underline md:inline"
+            className="text-[11px] font-semibold uppercase tracking-[0.22em] text-neutral-950 underline underline-offset-8 hover:text-brand-accentHover"
           >
-            Agenda una muestra institucional →
+            Coordinar proyecto →
           </Link>
         </div>
+
         <div className="mt-8 flex gap-3 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {site.catalogLines.map((line) => (
             <Link
               key={line.label}
               href="#servicios"
-              className="group min-w-[240px] rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-transparent px-5 py-4 shadow-card transition hover:border-brand-accent/40 hover:shadow-lift"
+              className="group flex min-w-[240px] flex-col rounded-2xl border border-neutral-200 bg-brand-panel px-5 py-4 shadow-[0_35px_80px_-72px_rgba(4,38,93,0.75)] ring-1 ring-neutral-950/5 transition hover:-translate-y-1 hover:border-neutral-950/25"
             >
-              <p className="text-base font-semibold text-white">{line.label}</p>
-              <p className="mt-1 text-sm text-brand-muted">{line.subtitle}</p>
-              <p className="mt-4 text-xs font-semibold uppercase tracking-[0.18em] text-brand-accent/80">
-                Ver capacidades
-              </p>
+              <p className="text-base font-semibold text-neutral-950">{line.label}</p>
+              <p className="mt-1 text-sm leading-relaxed text-brand-mutedLight">{line.subtitle}</p>
+              <span className="mt-6 text-[10px] font-semibold uppercase tracking-[0.3em] text-neutral-950/70">
+                Ver detalle institucional
+              </span>
             </Link>
           ))}
         </div>

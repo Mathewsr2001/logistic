@@ -12,11 +12,11 @@ html {
 }
 
 body {
-  @apply min-h-screen bg-brand-bg font-sans text-brand-muted antialiased;
+  @apply min-h-screen bg-brand-sheet font-sans text-neutral-900 antialiased;
 }
 
 ::selection {
-  @apply bg-brand-accent/35 text-white;
+  @apply bg-brand-accent/30 text-neutral-950;
 }
 
 @layer utilities {

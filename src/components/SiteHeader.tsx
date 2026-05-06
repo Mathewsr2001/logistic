@@ -4,56 +4,81 @@ import { MobileNav } from "./MobileNav";
 import { site } from "@/content/site";
 
 const navLinks = [
-  { href: "#servicios", label: "Servicios" },
-  { href: "#galeria", label: "Portafolio" },
-  { href: "#contacto", label: "Contacto" },
-];
+  { href: "#inicio", label: "INICIO" },
+  { href: "#coleccion-sheet", label: "COLECCIÓN" },
+  { href: "#servicios", label: "DEPARTAMENTOS" },
+  { href: "#galeria", label: "PORTAFOLIO" },
+  { href: "#contacto", label: "COTIZACIONES" },
+] as const;
+
+function IconConsult() {
+  return (
+    <svg viewBox="0 0 24 24" className="size-5" aria-hidden fill="none" strokeWidth="1.6" strokeLinecap="round">
+      <circle cx="10.65" cy="10.65" r="6.95" stroke="currentColor" />
+      <path d="M16.95 17.25 21 21.3" stroke="currentColor" />
+    </svg>
+  );
+}
+
+function IconBriefcase() {
+  return (
+    <svg viewBox="0 0 24 24" className="size-5" aria-hidden fill="none" stroke="currentColor" strokeWidth="1.55">
+      <path d="M8 11V9a4 4 0 1 1 8 0v2" strokeLinecap="round" />
+      <rect x="5" y="10" width="14" height="11" rx="2" ry="2" strokeLinejoin="round" />
+    </svg>
+  );
+}
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-40 border-b border-white/5 bg-brand-bg/70 backdrop-blur-2xl">
-      <div className="pointer-events-none absolute inset-x-0 top-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-      <div className="mx-auto flex h-[4.25rem] max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-10">
-        <Link
-          href="#inicio"
-          className="group flex items-center gap-3 text-white transition hover:text-white"
-        >
-          <LogoMark className="size-11 shrink-0 text-white" aria-hidden />
-          <div className="leading-tight">
-            <p className="text-[0.65rem] font-semibold uppercase tracking-[0.32em] text-brand-subtle">
-              Logistic
-            </p>
-            <p className="text-sm font-semibold sm:text-base">Fire &amp; Rescue</p>
-          </div>
+    <header className="border-b border-white/10 bg-brand-navyDeep/90 backdrop-blur-lg">
+      <div className="mx-auto flex h-[72px] max-w-[1600px] items-center justify-between px-4 sm:h-[76px] sm:px-6 lg:px-10">
+        <Link href="#inicio" className="flex items-center gap-3">
+          <LogoMark className="size-11 shrink-0 text-white md:size-12" aria-hidden />
+          <span className="hidden flex-col uppercase leading-snug md:flex">
+            <span className="text-[0.72rem] font-semibold tracking-[0.52em] text-brand-gold/90">
+              logistic
+            </span>
+            <span className="text-[15px] font-semibold tracking-[0.42em] text-white">Fire &amp; Rescue</span>
+          </span>
+          <span className="flex flex-col md:hidden">
+            <span className="text-[10px] font-semibold uppercase tracking-[0.4em] text-brand-gold/90">
+              logistic
+            </span>
+            <span className="text-sm font-semibold text-white">Fire &amp; Rescue</span>
+          </span>
         </Link>
 
-        <nav className="hidden items-center gap-10 md:flex" aria-label="Principal">
+        <nav className="hidden items-center gap-8 text-[11px] font-semibold tracking-[0.22em] text-white lg:flex" aria-label="Navegación principal">
           {navLinks.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="text-sm font-medium text-brand-muted transition hover:text-white"
-            >
+            <Link key={item.href} href={item.href} className="text-white/70 transition hover:text-white">
               {item.label}
             </Link>
           ))}
         </nav>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
           <Link
-            href={site.instagram.url}
+            href="#contacto"
+            className="hidden items-center rounded-full border border-transparent p-3 text-white/70 transition hover:text-white lg:inline-flex"
+            aria-label="Consultar proyecto"
+          >
+            <IconConsult />
+          </Link>
+          <Link
+            href={site.brochurePdf}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden text-sm font-semibold text-brand-accent transition hover:text-brand-accentHover lg:inline"
+            className="hidden items-center rounded-full border border-transparent p-3 text-white/70 transition hover:text-white lg:inline-flex"
+            aria-label="Descargar brochure PDF"
           >
-            {site.instagram.handle}
+            <IconBriefcase />
           </Link>
           <Link
             href="#contacto"
-            className="hidden rounded-full bg-white px-5 py-2 text-sm font-semibold text-brand-ink transition hover:bg-slate-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 sm:inline-flex"
-            style={{ outlineColor: "var(--ring)" }}
+            className="hidden rounded-full border border-white/15 px-6 py-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-white transition hover:border-brand-gold/40 hover:bg-white/5 lg:inline-flex"
           >
-            Cotizar
+            Agendar muestra
           </Link>
           <MobileNav />
         </div>

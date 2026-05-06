@@ -10,6 +10,11 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
+          sheet: "#f2f6fa",
+          panel: "#ffffff",
+          mutedLight: "#5c6778",
+          navyDeep: "#0a162c",
+          navyHero: "#040b17",
           ink: "#030308",
           bg: "#05050a",
           surface: "#0d0d12",

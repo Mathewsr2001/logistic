@@ -5,9 +5,10 @@ import Link from "next/link";
 import { LogoMark } from "./LogoMark";
 
 const navLinks = [
-  { href: "#servicios", label: "Servicios" },
+  { href: "#coleccion-sheet", label: "Colección" },
+  { href: "#servicios", label: "Departamentos" },
   { href: "#galeria", label: "Portafolio" },
-  { href: "#contacto", label: "Contacto" },
+  { href: "#contacto", label: "Cotizaciones" },
 ];
 
 export function MobileNav() {
@@ -45,7 +46,7 @@ export function MobileNav() {
       {open ? (
         <div
           id="mobile-drawer"
-          className="fixed inset-0 z-50 flex flex-col bg-brand-ink/96 px-5 pb-10 pt-24 backdrop-blur-xl"
+          className="fixed inset-0 z-[200] flex flex-col bg-brand-ink/97 px-5 pb-10 pt-24 backdrop-blur-2xl"
           role="dialog"
           aria-modal="true"
         >

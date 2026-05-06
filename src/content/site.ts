@@ -8,6 +8,9 @@ export const site = {
   motto: "Seriedad y cumplimiento",
   country: "Ecuador",
   shipping: "Envíos a todo el país",
+  promoBar: "Coordinación logística nacional · Muestras y lotes institucionales",
+  /** Título cinematográfico de colección — estilo PLP premium (uppercase recomendado en UI). */
+  catalogHeroHeading: "Uniformes institucionales",
 
   /** Líneas de catálogo (estilo storefront internacional adaptado al mercado institucional). */
   catalogLines: [
