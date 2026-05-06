@@ -21,6 +21,9 @@
 # local reference exports (downloads, cliente)
 _archive/
 
+# misc / installers mistakenly dropped in repo root
+*.msi
+
 # misc
 .DS_Store
 *.pem
