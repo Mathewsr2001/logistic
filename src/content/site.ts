@@ -13,7 +13,7 @@ export const site = {
   catalogHeroHeading: "Uniformes institucionales",
 
   /** Banner principal a pantalla (`next/image` fill). Sustituye el archivo en `public/banner/` si quieres otra foto. */
-  heroBannerSrc: "/banner/hero-banner.jpeg",
+  heroBannerSrc: "/banner/hero-banner.jpg",
   heroBannerAlt:
     "Uniformidad institucional y equipamiento para fuerzas del orden — banner Logistic Fire & Rescue Ecuador.",
 
