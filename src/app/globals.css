@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: dark;
+  color-scheme: light dark;
+  --brand-sheet: #f2f6fa;
   --ring: rgba(56, 182, 255, 0.45);
 }
 
@@ -12,7 +13,8 @@ html {
 }
 
 body {
-  @apply min-h-screen bg-brand-sheet font-sans text-neutral-900 antialiased;
+  @apply min-h-screen font-sans text-neutral-900 antialiased;
+  background-color: var(--brand-sheet);
 }
 
 ::selection {

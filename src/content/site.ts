@@ -8,9 +8,14 @@ export const site = {
   motto: "Seriedad y cumplimiento",
   country: "Ecuador",
   shipping: "Envíos a todo el país",
-  promoBar: "Coordinación logística nacional · Muestras y lotes institucionales",
+  promoBar: "Coordinación logística en Ecuador · Muestras y lotes institucionales",
   /** Título cinematográfico de colección — estilo PLP premium (uppercase recomendado en UI). */
   catalogHeroHeading: "Uniformes institucionales",
+
+  /** Banner principal a pantalla (`next/image` fill). Sustituye el archivo en `public/banner/` si quieres otra foto. */
+  heroBannerSrc: "/banner/hero-banner.jpeg",
+  heroBannerAlt:
+    "Uniformidad institucional y equipamiento para fuerzas del orden — banner Logistic Fire & Rescue Ecuador.",
 
   /** Líneas de catálogo (estilo storefront internacional adaptado al mercado institucional). */
   catalogLines: [

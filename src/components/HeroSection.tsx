@@ -1,9 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/content/site";
-import { galleryImages } from "@/content/gallery";
-
-const heroVisual = galleryImages[0];
 
 export function HeroSection() {
   return (
@@ -13,8 +10,8 @@ export function HeroSection() {
       aria-labelledby="coleccion-titulo"
     >
       <Image
-        src={heroVisual.src}
-        alt={heroVisual.alt}
+        src={site.heroBannerSrc}
+        alt={site.heroBannerAlt}
         fill
         priority
         placeholder="blur"

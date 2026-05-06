@@ -10,7 +10,7 @@ import { TrustStrip } from "@/components/TrustStrip";
 
 export default function Home() {
   return (
-    <div className="bg-brand-sheet text-neutral-900">
+    <div className="bg-[#f2f6fa] text-neutral-900">
       <CoreNav />
 
       <main className="flex-1">
@@ -18,7 +18,7 @@ export default function Home() {
 
         <div
           id="coleccion-sheet"
-          className="relative z-10 -mt-14 overflow-hidden rounded-t-[1.75rem] border border-neutral-200/65 bg-brand-sheet shadow-[0_-28px_80px_-50px_rgba(5,46,96,0.35)] md:-mt-[4.65rem] md:rounded-t-[2.65rem]"
+          className="relative z-10 -mt-14 overflow-hidden rounded-t-[1.75rem] border border-neutral-200/65 bg-[#f2f6fa] shadow-[0_-28px_80px_-50px_rgba(5,46,96,0.35)] md:-mt-[4.65rem] md:rounded-t-[2.65rem]"
         >
           <CollectionToolbar />
           <CatalogRail />
