@@ -7,7 +7,7 @@ export function HeroSection() {
     <section
       id="inicio"
       className="relative isolate min-h-[100svh] md:min-h-[min(900px,calc(100svh))]"
-      aria-labelledby="coleccion-titulo"
+      aria-labelledby="hero-titulo"
     >
       <Image
         src={site.heroBannerSrc}
@@ -25,52 +25,50 @@ export function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-t from-brand-navyHero via-brand-navyDeep/93 to-transparent" />
       </div>
 
-      <div className="relative flex min-h-[inherit] flex-col justify-end pb-14 md:pb-24">
-        <div className="pointer-events-none flex-1 md:min-h-[6rem]" aria-hidden />
+      <div className="relative flex min-h-[inherit] flex-col justify-end">
+        <div className="mx-auto w-full max-w-[1600px] px-4 pb-16 pt-10 sm:px-6 md:pb-28 lg:px-10 lg:pb-32">
+          <div className="max-w-[46rem] animate-fade-up">
+            <div className="inline-flex flex-wrap items-center gap-x-4 gap-y-2 rounded-full border border-white/12 bg-black/25 px-5 py-2.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] backdrop-blur-md">
+              <span
+                aria-hidden
+                className="inline-flex h-2 w-2 shrink-0 rounded-full bg-brand-accent shadow-[0_0_14px_rgba(56,182,255,0.85)]"
+              />
+              <span className="text-[10px] font-semibold uppercase tracking-[0.38em] text-white/95">
+                {site.motto}
+              </span>
+              <span className="hidden h-4 w-px bg-white/25 sm:block" aria-hidden />
+              <span className="text-[10px] font-semibold uppercase tracking-[0.28em] text-brand-gold/95">
+                {site.country}
+              </span>
+            </div>
 
-        <div className="mx-auto w-full max-w-[1600px] px-4 sm:px-6 lg:px-10">
-          <nav aria-label="Migas de pan" className="animate-fade-up text-[13px] text-white/70">
-            <ol className="flex flex-wrap items-center gap-x-3 gap-y-2">
-              <li>
-                <Link href="#inicio" className="inline-flex items-center gap-2 transition hover:text-white">
-                  <svg viewBox="0 0 20 18" aria-hidden className="size-[15px]" fill="none" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" stroke="currentColor">
-                    <path d="M10 17V9.57M14 17v-8M6 17V9M3 17h14" />
-                    <path d="m2 10 8-8 8 8" />
-                  </svg>
-                  Inicio
-                </Link>
-              </li>
-              <li aria-hidden className="text-white/35">
-                /
-              </li>
-              <li>
-                <Link href="#coleccion-sheet" className="transition hover:text-white">
-                  Colección
-                </Link>
-              </li>
-              <li aria-hidden className="text-white/35">
-                /
-              </li>
-              <li className="font-semibold text-white/95">{site.catalogHeroHeading}</li>
-            </ol>
-          </nav>
-
-          <div className="mt-12 max-w-[72rem]">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.48em] text-brand-gold/90">
-              {site.motto} · {site.country}
-            </p>
             <h1
-              id="coleccion-titulo"
-              className="mt-8 font-display text-[clamp(2.45rem,4.85vw,3.95rem)] font-extrabold uppercase leading-none tracking-[0.12em] text-white text-pretty md:tracking-[0.18em]"
+              id="hero-titulo"
+              className="mt-9 font-display text-[clamp(2.15rem,5vw,3.35rem)] font-extrabold leading-[1.08] tracking-tight text-white text-pretty md:mt-11 md:tracking-tight"
             >
               {site.catalogHeroHeading}
             </h1>
-            <p className="mt-10 max-w-3xl text-lg leading-relaxed text-white/85 md:text-[1.12rem]">
-              {site.heroHeadline}{" "}
-              <Link href="#galeria" className="font-semibold text-brand-accent underline-offset-[8px] hover:text-white hover:underline">
-                Ver referencias en catálogo →
-              </Link>
+
+            <p className="mt-7 max-w-2xl text-[1.0625rem] leading-[1.65] text-white/88 md:text-[1.125rem]">
+              {site.heroHeadline}
             </p>
+
+            <div className="mt-10 flex flex-wrap items-center gap-4">
+              <Link
+                href="#contacto"
+                className="inline-flex min-h-[3rem] min-w-[11.5rem] items-center justify-center rounded-full bg-white px-8 text-[13px] font-semibold uppercase tracking-[0.14em] text-brand-navyDeep shadow-[0_16px_40px_-12px_rgba(0,0,0,0.45)] transition hover:bg-slate-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+                style={{ outlineColor: "var(--ring)" }}
+              >
+                Coordinar proyecto
+              </Link>
+              <Link
+                href="#galeria"
+                className="inline-flex min-h-[3rem] items-center justify-center rounded-full border border-white/25 bg-white/10 px-8 text-[13px] font-semibold uppercase tracking-[0.14em] text-white backdrop-blur-sm transition hover:border-brand-accent/50 hover:bg-white/15 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+                style={{ outlineColor: "var(--ring)" }}
+              >
+                Ver catálogo
+              </Link>
+            </div>
           </div>
         </div>
       </div>
