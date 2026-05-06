@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { LogoMark } from "./LogoMark";
+import { BrandLogo } from "./BrandLogo";
 
 const navLinks = [
   { href: "#coleccion-sheet", label: "Colección" },
@@ -51,7 +51,7 @@ export function MobileNav() {
           aria-modal="true"
         >
           <div className="mb-10 flex items-center gap-3 border-b border-white/10 pb-8">
-            <LogoMark className="size-12 text-white" aria-hidden />
+            <BrandLogo size="md" />
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.26em] text-brand-subtle">Logistic</p>
               <p className="text-lg font-semibold text-white">Fire &amp; Rescue</p>

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { LogoMark } from "./LogoMark";
+import { BrandLogo } from "./BrandLogo";
 import { MobileNav } from "./MobileNav";
 import { site } from "@/content/site";
 
@@ -34,7 +34,7 @@ export function SiteHeader() {
     <header className="border-b border-white/10 bg-brand-navyDeep/90 backdrop-blur-lg">
       <div className="mx-auto flex h-[72px] max-w-[1600px] items-center justify-between px-4 sm:h-[76px] sm:px-6 lg:px-10">
         <Link href="#inicio" className="flex items-center gap-3">
-          <LogoMark className="size-11 shrink-0 text-white md:size-12" aria-hidden />
+          <BrandLogo size="md" priority />
           <span className="hidden flex-col uppercase leading-snug md:flex">
             <span className="text-[0.72rem] font-semibold tracking-[0.52em] text-brand-gold/90">
               logistic

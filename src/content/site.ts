@@ -17,6 +17,10 @@ export const site = {
   heroBannerAlt:
     "Uniformidad institucional y equipamiento para fuerzas del orden — banner Logistic Fire & Rescue Ecuador.",
 
+  /** Logo raster o SVG en `public/logo/` (reemplaza `logo.svg` / `logo.png` según convenga). */
+  logoSrc: "/logo/logo.svg",
+  logoAlt: "Logistic Fire & Rescue — marca institucional",
+
   /** Líneas de catálogo (estilo storefront internacional adaptado al mercado institucional). */
   catalogLines: [
     { label: "Policía nacional", subtitle: "Formal, operativo e insignias" },

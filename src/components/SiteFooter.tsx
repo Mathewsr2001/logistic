@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { LogoMark } from "./LogoMark";
+import { BrandLogo } from "./BrandLogo";
 import { site } from "@/content/site";
 
 export function SiteFooter() {
@@ -17,7 +17,7 @@ export function SiteFooter() {
       <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[1fr_auto_auto] lg:gap-16 lg:px-10">
         <div className="max-w-md">
           <div className="flex items-start gap-4">
-            <LogoMark className="size-16 shrink-0 text-white" />
+            <BrandLogo size="lg" className="size-16" />
             <div>
               <p className="font-display text-xl font-semibold text-white">{site.legalName}</p>
               <p className="mt-4 text-sm leading-relaxed text-brand-muted">{site.tagline}</p>
