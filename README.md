@@ -1,23 +1,56 @@
-## Logistic Fire & Rescue — sitio institucional
+# Logistic — sitio institucional (Fire & Rescue)
 
-Stack: Next.js (App Router) + React + TypeScript + Tailwind CSS, optimizado para Vercel.
+Repositorio: [github.com/Mathewsr2001/logistic](https://github.com/Mathewsr2001/logistic)
 
-### Desarrollo local
+Sitio público profesional para **Logistic Fire & Rescue** (uniformes, gorras, insignias para instituciones en Ecuador).
+
+## Stack
+
+- [Next.js](https://nextjs.org/) (App Router) + React 19  
+- TypeScript  
+- Tailwind CSS  
+- Imágenes con [`next/image`](https://nextjs.org/docs/app/building-your-application/optimizing/images) (lista en `src/content/gallery.ts`, archivos en `public/galeria/`)
+
+## Desarrollo local
 
 1. Instala [Node.js LTS](https://nodejs.org) (incluye `npm`).
-2. `npm install`
-3. `npm run dev` y abre `http://localhost:3000`.
+2. En la raíz del proyecto:
+   ```bash
+   npm install
+   npm run dev
+   ```
+3. Abre `http://localhost:3000`.
 
-Variables opcionales: copiar `.env.example` a `.env.local` si defines un dominio definitivo (`NEXT_PUBLIC_SITE_URL`).
+Opcional: copia `.env.example` a `.env.local` y define `NEXT_PUBLIC_SITE_URL=https://TU-DOMINIO.vercel.app` para metadatos y Open Graph cuando pruebas fuera de Vercel.
 
-### Fotos públicas
+## Galería y PDF
 
-Coloca JPG/WebP en `public/galeria/` y enlázalas con [`next/image`](https://nextjs.org/docs/app/building-your-application/optimizing/images) para mejorar LCP.
+- **Fotos:** `public/galeria/logistic-01.jpeg` … `logistic-08.jpeg` (añade más JPEG/WebP aquí y entradas nuevas en `src/content/gallery.ts`).
+- **Brochure:** `public/docs/logistic-catalogo.pdf` enlazado desde la web.
 
-### Producción (`main`)
+Los ZIP/WhatsApp sin versionar siguen en `_archive/` solo en tu máquina (ignorados en Git).
 
-1. Repo en GitHub con ramas `main` y `develop`.
-2. En Vercel, importar el proyecto: build `npm run build`, output estándar de Next.js.
-3. Rama `develop` crea previews automáticos en Vercel; `main` despliega producción cuando se fusiona/manda push según configuración por defecto.
+## Ramas y despliegue (Vercel gratis)
 
-Los archivos de referencia en `_archive/` quedan solo en tu equipo (ignorados en Git).
+| Rama       | Rol típico        |
+|-----------|-------------------|
+| `main`    | Producción        |
+| `develop` | Previews por PR/commit |
+
+Pasos rápidos en [Vercel](https://vercel.com):
+
+1. Cuenta gratis → **Add New Project** → importar `Mathewsr2001/logistic`.
+2. **Framework preset:** Next.js (auto). **Build:** `npm run build`. **Install:** default.
+3. Tras el primer deploy, opcionalmente asignas dominio `.vercel.app` o dominio propio en el plan Hobby (sin costo hasta los límites del plan gratis).
+
+Las integraciones gratuitas incluyen previews en cada push a `develop` y producción cuando integras merges a `main` (según la rama que marques como *Production Branch* en el proyecto).
+
+## Subir código a GitHub (si aún no)
+
+```bash
+git remote add origin https://github.com/Mathewsr2001/logistic.git
+git push -u origin main
+git push -u origin develop
+```
+
+Primera vez: GitHub suele pedir [Personal Access Token](https://github.com/settings/tokens) o GitHub CLI en lugar de contraseña.

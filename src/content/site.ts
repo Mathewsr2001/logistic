@@ -45,11 +45,5 @@ export const site = {
     },
   ],
 
-  galleryCategories: [
-    "Gorras y boinas ceremonial",
-    "Uniformidad formal",
-    "Equipo táctico y operativo",
-    "Insignias y detalles en metal",
-    "Entregas e instalaciones",
-  ],
+  brochurePdf: "/docs/logistic-catalogo.pdf",
 } as const;
