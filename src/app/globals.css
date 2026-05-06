@@ -6,15 +6,51 @@
   color-scheme: light dark;
   --brand-sheet: #f2f6fa;
   --ring: rgba(56, 182, 255, 0.45);
+  --scrollbar-track: #e4edf5;
+  --scrollbar-thumb: linear-gradient(180deg, #5ec0ff 0%, #2a8fd4 48%, #1568b8 100%);
+  --scrollbar-thumb-hover: linear-gradient(180deg, #7ad0ff 0%, #38b6ff 45%, #1e7ec9 100%);
 }
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 8.75rem;
 }
 
 body {
   @apply min-h-screen font-sans text-neutral-900 antialiased;
   background-color: var(--brand-sheet);
+}
+
+/* Scrollbar personalizada (Firefox) */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #38b6ff var(--scrollbar-track);
+}
+
+/* Scrollbar personalizada (Chrome, Edge, Safari) */
+*::-webkit-scrollbar {
+  width: 11px;
+  height: 11px;
+}
+
+*::-webkit-scrollbar-track {
+  background: linear-gradient(180deg, #eef6fc 0%, #dceefa 100%);
+  border-radius: 9999px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 9999px;
+  border: 3px solid var(--scrollbar-track);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
+
+*::-webkit-scrollbar-corner {
+  background: var(--scrollbar-track);
 }
 
 ::selection {
@@ -30,6 +66,7 @@ body {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+    scroll-padding-top: 6rem;
   }
   *,
   ::before,
@@ -37,5 +74,16 @@ body {
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
+  }
+
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: auto;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background: #94a3b8;
+    border: none;
+    box-shadow: none;
   }
 }

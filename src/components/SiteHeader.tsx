@@ -29,38 +29,50 @@ function IconBriefcase() {
   );
 }
 
-export function SiteHeader() {
+type SiteHeaderProps = {
+  elevated?: boolean;
+};
+
+export function SiteHeader({ elevated = false }: SiteHeaderProps) {
   return (
-    <header className="border-b border-white/10 bg-brand-navyDeep/90 backdrop-blur-lg">
-      <div className="mx-auto flex h-[72px] max-w-[1600px] items-center justify-between px-4 sm:h-[76px] sm:px-6 lg:px-10">
-        <Link href="#inicio" className="flex items-center gap-3">
+    <header
+      className={`border-b border-white/10 backdrop-blur-xl transition-[background-color,backdrop-filter] duration-300 ease-out ${
+        elevated
+          ? "bg-brand-navyDeep/[0.97] shadow-[inset_0_-1px_0_0_rgba(255,255,255,0.06)]"
+          : "bg-brand-navyDeep/88"
+      }`}
+    >
+      <div className="mx-auto flex h-[68px] max-w-[1600px] items-center justify-between px-4 sm:h-[72px] sm:px-6 lg:h-[76px] lg:px-10">
+        <Link href="#inicio" className="group flex items-center gap-3">
           <BrandLogo size="md" priority />
           <span className="hidden flex-col uppercase leading-snug md:flex">
-            <span className="text-[0.72rem] font-semibold tracking-[0.52em] text-brand-gold/90">
+            <span className="text-[0.72rem] font-semibold tracking-[0.52em] text-brand-gold/90 transition-colors group-hover:text-brand-gold">
               logistic
             </span>
             <span className="text-[15px] font-semibold tracking-[0.42em] text-white">Fire &amp; Rescue</span>
           </span>
           <span className="flex flex-col md:hidden">
-            <span className="text-[10px] font-semibold uppercase tracking-[0.4em] text-brand-gold/90">
-              logistic
-            </span>
+            <span className="text-[10px] font-semibold uppercase tracking-[0.4em] text-brand-gold/90">logistic</span>
             <span className="text-sm font-semibold text-white">Fire &amp; Rescue</span>
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-8 text-[11px] font-semibold tracking-[0.22em] text-white lg:flex" aria-label="Navegación principal">
+        <nav className="hidden items-center gap-7 text-[11px] font-semibold tracking-[0.2em] text-white lg:flex xl:gap-9" aria-label="Navegación principal">
           {navLinks.map((item) => (
-            <Link key={item.href} href={item.href} className="text-white/70 transition hover:text-white">
+            <Link
+              key={item.href}
+              href={item.href}
+              className="relative py-2 text-white/72 transition-colors after:absolute after:inset-x-0 after:-bottom-0.5 after:h-px after:origin-left after:scale-x-0 after:bg-brand-accent after:transition-transform after:duration-300 hover:text-white hover:after:scale-x-100"
+            >
               {item.label}
             </Link>
           ))}
         </nav>
 
-        <div className="flex items-center gap-2 sm:gap-3">
+        <div className="flex items-center gap-1.5 sm:gap-3">
           <Link
             href="#contacto"
-            className="hidden items-center rounded-full border border-transparent p-3 text-white/70 transition hover:text-white lg:inline-flex"
+            className="hidden items-center rounded-full border border-transparent p-2.5 text-white/72 transition hover:bg-white/5 hover:text-white lg:inline-flex"
             aria-label="Consultar proyecto"
           >
             <IconConsult />
@@ -69,14 +81,14 @@ export function SiteHeader() {
             href={site.brochurePdf}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden items-center rounded-full border border-transparent p-3 text-white/70 transition hover:text-white lg:inline-flex"
+            className="hidden items-center rounded-full border border-transparent p-2.5 text-white/72 transition hover:bg-white/5 hover:text-white lg:inline-flex"
             aria-label="Descargar brochure PDF"
           >
             <IconBriefcase />
           </Link>
           <Link
             href="#contacto"
-            className="hidden rounded-full border border-white/15 px-6 py-2 text-[11px] font-semibold uppercase tracking-[0.22em] text-white transition hover:border-brand-gold/40 hover:bg-white/5 lg:inline-flex"
+            className="hidden rounded-full border border-white/18 bg-white/[0.04] px-5 py-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-white shadow-[0_0_0_1px_rgba(56,182,255,0.12)] transition hover:border-brand-accent/45 hover:bg-brand-accent/10 hover:text-brand-accent lg:inline-flex"
           >
             Agendar muestra
           </Link>
