@@ -21,7 +21,7 @@ export function BrandLogo({ size = "md", className = "", priority = false }: Bra
       width={dim}
       height={dim}
       priority={priority}
-      className={`shrink-0 object-contain ${className}`}
+      className={`shrink-0 rounded-xl object-cover shadow-[0_6px_20px_-6px_rgba(2,16,48,0.65)] ring-2 ring-white/25 ${className}`}
     />
   );
 }
