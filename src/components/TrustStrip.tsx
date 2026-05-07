@@ -6,8 +6,8 @@ export function TrustStrip() {
       <div className="mx-auto grid max-w-[1400px] gap-10 text-brand-mutedLight md:grid-cols-2 lg:grid-cols-4">
         {site.trustHighlights.map((item) => (
           <div key={item.title} className="space-y-3">
-            <p className="text-[1.0625rem] font-semibold text-neutral-950">{item.title}</p>
-            <p className="text-[0.95rem] leading-relaxed">{item.body}</p>
+            <p className="font-display text-[1.0625rem] font-semibold leading-snug text-neutral-950">{item.title}</p>
+            <p className="text-body-sm">{item.body}</p>
           </div>
         ))}
       </div>

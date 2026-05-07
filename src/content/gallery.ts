@@ -1,49 +1,56 @@
+/**
+ * Referencias visuales para vitrina / PLP.
+ * Imágenes: Pexels (licencia Pexels · uso libre). Solo fines de presentación en catálogo.
+ * Parámetros de URL optimizados para Next/Image (ancho ~1400).
+ */
+const px = (id: number) =>
+  `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=1400`;
+
 export type GalleryImage = {
-  src: `/galeria/${string}`;
+  src: string;
   title: string;
   alt: string;
 };
 
-/** Archivos optimizados en `public/galeria` (JPEG exportado desde WhatsApp). */
 export const galleryImages = [
   {
-    src: "/galeria/logistic-01.jpeg",
-    title: "Gorras y placa frontal",
-    alt: "Primera vista de trabajo de confección de gorras y detalles de placa frontal.",
+    src: px(7714867),
+    title: "Uniforme táctico · referencia urbana",
+    alt: "Referencia visual profesional: uniformes institucionales tipo fuerzas del orden (imagen ilustrativa de catálogo).",
   },
   {
-    src: "/galeria/logistic-02.jpeg",
-    title: "Bordados y protocolo",
-    alt: "Primera muestra alterna de trabajo de gorras ceremonial con bordado fino.",
+    src: px(7715102),
+    title: "Patrulla · presencia operativa",
+    alt: "Escena referencial de patrulla y dotación coordinada para presentaciones institucionales (stock profesional).",
   },
   {
-    src: "/galeria/logistic-03.jpeg",
-    title: "Ceremonial destacado",
-    alt: "Muestra de gorra ceremonial para uso institucional.",
+    src: px(4827720),
+    title: "Protocolo calle · orden público",
+    alt: "Imagen de referencia para uniformidad en operación diaria y protocolo exterior (ilustrativa).",
   },
   {
-    src: "/galeria/logistic-04.jpeg",
-    title: "Ceremonial en detalle",
-    alt: "Otra vista de modelo ceremonial producido por Logistic Fire & Rescue.",
+    src: px(5949768),
+    title: "Conjunto formal · línea institucional",
+    alt: "Conjunto presentado como referencia de estética corporativa e institucional (catálogo ilustrativo).",
   },
   {
-    src: "/galeria/logistic-05.jpeg",
-    title: "Uniformidad y presentación",
-    alt: "Imagen de uniformidad o presentación de pedido para fuerzas del orden.",
+    src: px(6754149),
+    title: "Respuesta institucional · coordinación en campo",
+    alt: "Personal de respuesta y equipamiento junto a unidad de emergencia; referencia profesional para catálogo institucional (imagen ilustrativa).",
   },
   {
-    src: "/galeria/logistic-06.jpeg",
-    title: "Entrega y logística",
-    alt: "Trabajo de confección o entrega de uniformes y accesorios.",
+    src: px(5638736),
+    title: "Ceremonial · gala y gala táctica",
+    alt: "Referencia de presentación formal y galas institucionales (stock para vitrina de catálogo).",
   },
   {
-    src: "/galeria/logistic-07.jpeg",
-    title: "Operativo y campo",
-    alt: "Equipo o uniforme para operaciones de campo o rescate.",
+    src: px(4549414),
+    title: "Campo · operación prolongada",
+    alt: "Escena referencial de trabajo en campo y equipamiento resistente (ilustrativa para catálogo).",
   },
   {
-    src: "/galeria/logistic-08.jpeg",
-    title: "Calidad de acabado",
-    alt: "Detalle de acabado de confección y presentación institucional.",
+    src: px(5673488),
+    title: "Detalle · acabado y homogeneidad",
+    alt: "Detalle referencial de uniformidad y acabado para fichas técnicas de presentación (stock profesional).",
   },
 ] as const satisfies readonly GalleryImage[];

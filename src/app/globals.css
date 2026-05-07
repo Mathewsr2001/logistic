@@ -17,8 +17,19 @@ html {
 }
 
 body {
-  @apply min-h-screen font-sans text-neutral-900 antialiased;
+  @apply min-h-screen font-sans text-base text-neutral-900 antialiased;
   background-color: var(--brand-sheet);
+  font-feature-settings: "kern" 1, "liga" 1;
+  font-variant-numeric: lining-nums;
+  text-rendering: optimizeLegibility;
+}
+
+/* Titulares serif: ligaduras y contorno nítido sin romper las utilidades `font-display` de Tailwind. */
+@layer utilities {
+  .font-display {
+    font-feature-settings: "kern" 1, "liga" 1, "lnum" 1;
+    text-rendering: geometricPrecision;
+  }
 }
 
 /* Scrollbar personalizada (Firefox) */

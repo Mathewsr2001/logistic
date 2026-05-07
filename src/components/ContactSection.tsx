@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { InstagramPreviewCard } from "@/components/InstagramPreviewCard";
 import { site } from "@/content/site";
 
 export function ContactSection() {
@@ -7,13 +8,13 @@ export function ContactSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-10">
         <div className="grid gap-14 lg:grid-cols-[1.06fr_minmax(0,0.94fr)] lg:gap-20">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.38em] text-brand-accent">
+            <p className="text-xs font-semibold uppercase tracking-caps-lg text-brand-accent">
               Coordinación directa
             </p>
-            <h2 className="mt-6 font-display text-3xl font-extrabold tracking-tight text-white text-balance sm:text-[2.45rem]">
+            <h2 className="mt-6 font-display text-page-title font-bold leading-[1.15] text-white text-pretty">
               Estamos preparados para levantamientos de colección serios
             </h2>
-            <p className="mt-6 text-[1.05rem] leading-relaxed text-brand-muted">
+            <p className="mt-6 text-lead text-brand-muted">
               Comparte manuales, tallas esperadas y plazos institucionales. Canalizamos la respuesta desde
               canales públicos con el mismo nivel de formalidad esperado por tu cadena jerárquica.
             </p>
@@ -21,7 +22,7 @@ export function ContactSection() {
             <ul className="mt-12 divide-y divide-white/10 rounded-[1.85rem] border border-white/10 bg-white/5 p-10 backdrop-blur-xl">
               {site.phones.map((phone) => (
                 <li key={phone.tel} className="flex flex-wrap items-center justify-between gap-3 py-5 first:pt-0 last:pb-0">
-                  <span className="text-[11px] font-semibold uppercase tracking-[0.32em] text-brand-subtle">
+                  <span className="text-[11px] font-semibold uppercase tracking-caps-md text-brand-subtle">
                     {phone.label}
                   </span>
                   <a
@@ -64,19 +65,14 @@ export function ContactSection() {
 
           <aside className="rounded-[2.2rem] border border-white/10 bg-gradient-to-br from-brand-accent/35 via-brand-elevated to-brand-bg p-[1px] shadow-lift">
             <div className="h-full rounded-[2.1rem] bg-brand-bg/90 p-10 backdrop-blur-2xl sm:p-12">
-              <h3 className="text-xl font-semibold text-white">Checklist de cotización ejecutiva</h3>
-              <ol className="mt-8 space-y-5 text-[0.95rem] leading-relaxed text-brand-muted marker:text-brand-accent [&>li]:list-decimal [&>li]:pl-5">
+              <h3 className="font-display text-xl font-semibold text-white">Checklist de cotización ejecutiva</h3>
+              <ol className="mt-8 space-y-5 text-body-sm text-brand-muted marker:text-brand-accent [&>li]:list-decimal [&>li]:pl-5">
                 <li>Manual de insignias y normativa actualizada.</li>
                 <li>Matriz tallas / género / composición institucional.</li>
                 <li>Materiales requeridos o restricciones de color institucional.</li>
                 <li>Fecha objetivo y puntos logísticos de entrega dentro del país.</li>
               </ol>
-              <div className="mt-12 rounded-[1.4rem] border border-brand-accent/40 bg-brand-accent/15 p-6 text-[0.9rem] leading-relaxed text-brand-accent">
-                <p className="font-semibold text-white">{site.username}</p>
-                <p className="mt-3 text-brand-muted">
-                  {site.motto}. Operación integral en {site.country}.
-                </p>
-              </div>
+              <InstagramPreviewCard />
             </div>
           </aside>
         </div>

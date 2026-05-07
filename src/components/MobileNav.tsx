@@ -2,17 +2,25 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { BrandLogo } from "./BrandLogo";
+import { routes } from "@/lib/routes";
+import { scrollToCatalogGaleria } from "@/lib/scrollCatalogGaleria";
+
+const portfolioHref = `${routes.catalogo}#galeria` as const;
 
 const navLinks = [
-  { href: "#coleccion-sheet", label: "Colección" },
-  { href: "#servicios", label: "Departamentos" },
-  { href: "#galeria", label: "Portafolio" },
-  { href: "#contacto", label: "Cotizaciones" },
-];
+  { href: routes.home, label: "Inicio" },
+  { href: routes.catalogo, label: "Colección" },
+  { href: routes.servicios, label: "Departamentos" },
+  { href: portfolioHref, label: "Portafolio" },
+  { href: routes.contacto, label: "Cotizaciones" },
+] as const;
 
 export function MobileNav() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname() ?? "/";
+  const onCatalog = pathname === routes.catalogo || pathname.startsWith(`${routes.catalogo}/`);
 
   useEffect(() => {
     if (!open) return;
@@ -53,7 +61,7 @@ export function MobileNav() {
           <div className="mb-10 flex items-center gap-3 border-b border-white/10 pb-8">
             <BrandLogo size="md" />
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.26em] text-brand-subtle">Logistic</p>
+              <p className="text-xs font-semibold uppercase tracking-caps-mid text-brand-subtle">Logistic</p>
               <p className="text-lg font-semibold text-white">Fire &amp; Rescue</p>
             </div>
           </div>
@@ -62,7 +70,17 @@ export function MobileNav() {
               <Link
                 key={item.href}
                 href={item.href}
-                onClick={() => setOpen(false)}
+                onClick={(e) => {
+                  const isPortfolio = item.href === portfolioHref;
+                  if (isPortfolio && onCatalog) {
+                    e.preventDefault();
+                    window.history.replaceState(null, "", portfolioHref);
+                    setOpen(false);
+                    window.requestAnimationFrame(() => scrollToCatalogGaleria());
+                    return;
+                  }
+                  setOpen(false);
+                }}
                 className="border-b border-white/5 pb-4 text-brand-muted transition hover:text-white"
               >
                 {item.label}
@@ -70,7 +88,7 @@ export function MobileNav() {
             ))}
           </nav>
           <Link
-            href="#contacto"
+            href={routes.contacto}
             onClick={() => setOpen(false)}
             className="mt-8 inline-flex items-center justify-center rounded-full bg-brand-accent px-6 py-3 text-base font-semibold text-brand-ink shadow-glow"
           >

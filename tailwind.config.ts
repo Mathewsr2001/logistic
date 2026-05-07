@@ -30,8 +30,45 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ["var(--font-sans)", "system-ui", "sans-serif"],
-        display: ["var(--font-display)", "var(--font-sans)", "system-ui", "sans-serif"],
+        sans: ["var(--font-sans)", "system-ui", "Segoe UI", "sans-serif"],
+        display: ["var(--font-display)", "Georgia", "Times New Roman", "serif"],
+      },
+      fontSize: {
+        /** Hero principal (landing). */
+        hero: ["clamp(2.15rem,5vw,3.35rem)", { lineHeight: "1.08", letterSpacing: "-0.02em" }],
+        /** Secciones tipo vitrina / PLP. */
+        section: ["clamp(1.65rem,3.2vw,2.35rem)", { lineHeight: "1.18", letterSpacing: "-0.02em" }],
+        /** Galería y bloques medios. */
+        gallery: ["clamp(1.85rem,4vw,2.75rem)", { lineHeight: "1.15", letterSpacing: "-0.02em" }],
+        /** Cabeceras de página interior. */
+        "page-title": ["clamp(1.75rem,3.5vw,2.65rem)", { lineHeight: "1.2", letterSpacing: "-0.02em" }],
+        /** Tarjetas exploración inicio. */
+        explore: ["clamp(1.65rem,3vw,2.25rem)", { lineHeight: "1.2", letterSpacing: "-0.02em" }],
+        /** Párrafos destacados (cuerpo). */
+        lead: ["1.0625rem", { lineHeight: "1.65" }],
+        /** Texto secundario cómodo. */
+        "body-sm": ["0.95rem", { lineHeight: "1.62" }],
+      },
+      letterSpacing: {
+        /** Navegación superior estilo boutique. */
+        nav: "0.2em",
+        /** Microcopy en mayúsculas (CTA, etiquetas). */
+        "caps-tight": "0.14em",
+        "caps-sm": "0.22em",
+        caps: "0.28em",
+        "caps-md": "0.32em",
+        "caps-lg": "0.38em",
+        "caps-xl": "0.42em",
+        /** Líneas de catálogo / referencias. */
+        "caps-wider": "0.34em",
+        /** Tarjetas y pies compactos. */
+        "caps-prominent": "0.3em",
+        /** Kicker intermedio (drawer, etiquetas). */
+        "caps-mid": "0.26em",
+        /** Micro-marca móvil. */
+        "caps-logo": "0.4em",
+        /** Logotipo tipográfico “LOGISTIC”. */
+        brand: "0.52em",
       },
       boxShadow: {
         glow: "0 0 120px -20px rgba(56,182,255,0.55)",
@@ -58,10 +95,16 @@ const config: Config = {
           "0%": { backgroundPosition: "0% 50%" },
           "100%": { backgroundPosition: "200% 50%" },
         },
+        /** Subrayado hero “UNIFORMES”: brillo que recorre de izquierda a derecha. */
+        "hero-underline-flow": {
+          "0%": { backgroundPosition: "0% 50%" },
+          "100%": { backgroundPosition: "200% 50%" },
+        },
       },
       animation: {
         "fade-up": "fade-up 0.7s ease-out both",
         shimmer: "shimmer 7s linear infinite",
+        "hero-underline-flow": "hero-underline-flow 3.4s ease-in-out infinite",
       },
     },
   },

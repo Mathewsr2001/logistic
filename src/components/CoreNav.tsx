@@ -4,7 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import { AnnouncementBar } from "@/components/AnnouncementBar";
 import { SiteHeader } from "@/components/SiteHeader";
 
-const SCROLL_EPS = 4;
+/** Delta mínimo de scroll para reaccionar — más alto = menos “parpadeos”. */
+const SCROLL_EPS = 10;
 
 export function CoreNav() {
   const [elevated, setElevated] = useState(false);
@@ -32,14 +33,15 @@ export function CoreNav() {
           window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
         if (prefersReduced) {
-          setShowPromo(y < 64);
+          setShowPromo(y < 80);
           ticking.current = false;
           return;
         }
 
-        if (y < 56) {
+        /* Solo la barra promocional se pliega; SiteHeader sigue fijo y visible siempre. */
+        if (y < 72) {
           setShowPromo(true);
-        } else if (delta > SCROLL_EPS && y > 120) {
+        } else if (delta > SCROLL_EPS && y > 200) {
           setShowPromo(false);
         } else if (delta < -SCROLL_EPS) {
           setShowPromo(true);
@@ -62,14 +64,14 @@ export function CoreNav() {
       }}
     >
       <div
-        className="overflow-hidden transition-[max-height,opacity] duration-300 ease-out"
-        style={{
-          maxHeight: showPromo ? "3.75rem" : "0px",
-          opacity: showPromo ? 1 : 0,
-        }}
+        className={`grid overflow-hidden motion-reduce:transition-none motion-reduce:duration-0 transition-[grid-template-rows] duration-[920ms] ease-[cubic-bezier(0.22,1,0.36,1)] ${
+          showPromo ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+        }`}
         aria-hidden={!showPromo}
       >
-        <AnnouncementBar />
+        <div className="min-h-0 overflow-hidden">
+          <AnnouncementBar />
+        </div>
       </div>
       <SiteHeader elevated={elevated} />
     </div>

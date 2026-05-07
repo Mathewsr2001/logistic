@@ -1,20 +1,22 @@
 import type { Metadata, Viewport } from "next";
-import { Plus_Jakarta_Sans, Syne } from "next/font/google";
+import { IBM_Plex_Sans, IBM_Plex_Serif } from "next/font/google";
 import "./globals.css";
 import { site } from "@/content/site";
 
-const jakarta = Plus_Jakarta_Sans({
-  subsets: ["latin"],
+/** UI y cuerpo: legible, uso institucional y largos bloques de texto. */
+const ibmSans = IBM_Plex_Sans({
+  subsets: ["latin", "latin-ext"],
   display: "swap",
   variable: "--font-sans",
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["400", "500", "600", "700"],
 });
 
-const syne = Syne({
-  subsets: ["latin"],
+/** Titulares y marca editorial (serif técnico IBM Plex). */
+const ibmSerif = IBM_Plex_Serif({
+  subsets: ["latin", "latin-ext"],
   display: "swap",
   variable: "--font-display",
-  weight: ["600", "700", "800"],
+  weight: ["500", "600", "700"],
 });
 
 const siteOrigin =
@@ -28,7 +30,11 @@ export const metadata: Metadata = {
     template: `%s · ${site.name}`,
   },
   description: site.tagline,
-  icons: [{ rel: "icon", url: "/favicon.svg", type: "image/svg+xml" }],
+  icons: {
+    icon: [{ url: site.logoSrc, type: "image/png" }],
+    apple: [{ url: site.logoSrc, type: "image/png" }],
+    shortcut: [{ url: site.logoSrc, type: "image/png" }],
+  },
   keywords: [
     "uniformes militares Ecuador",
     "uniformes policía Ecuador",
@@ -55,7 +61,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" suppressHydrationWarning>
-      <body className={`${jakarta.variable} ${syne.variable}`}>{children}</body>
+      <body className={`${ibmSans.variable} ${ibmSerif.variable} font-sans antialiased`}>{children}</body>
     </html>
   );
 }

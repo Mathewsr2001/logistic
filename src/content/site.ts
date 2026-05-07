@@ -1,8 +1,3 @@
-import { galleryImages } from "./gallery";
-
-/** Logo de marca = misma foto que tarjeta «Ceremonial destacado» en galería (índice 2 · logistic-03). */
-const logoAsset = galleryImages[2]!;
-
 export const site = {
   name: "Logistic Fire & Rescue",
   legalName: "Logistic Fire & Rescue",
@@ -13,7 +8,8 @@ export const site = {
   motto: "Seriedad y cumplimiento",
   country: "Ecuador",
   shipping: "Envíos a todo el país",
-  promoBar: "Coordinación logística en Ecuador · Muestras y lotes institucionales",
+  promoBar:
+    "Equipamiento institucional ceremonial y operativo · Ecuador · Muestreo técnico y lotes con trazabilidad",
   /** Título cinematográfico de colección — estilo PLP premium (uppercase recomendado en UI). */
   catalogHeroHeading: "Uniformes institucionales",
 
@@ -22,9 +18,9 @@ export const site = {
   heroBannerAlt:
     "Uniformidad institucional y equipamiento para fuerzas del orden — banner Logistic Fire & Rescue Ecuador.",
 
-  /** Logo en cabecera/pie — enlazado a la entrada de galería (evita textos duplicados). */
-  logoSrc: logoAsset.src,
-  logoAlt: logoAsset.alt,
+  /** Logo cabecera · PNG con alpha (`public/logo/logistic-logoicon.png`). Generar con `node scripts/process-logo.mjs` desde `public/galeria/logistic-LOGOICON.jpeg`. */
+  logoSrc: "/logo/logistic-logoicon.png",
+  logoAlt: "Logistic Fire & Rescue — logotipo",
 
   /** Líneas de catálogo (estilo storefront internacional adaptado al mercado institucional). */
   catalogLines: [
@@ -57,6 +53,12 @@ export const site = {
   instagram: {
     handle: "logistic_ec",
     url: "https://instagram.com/logistic_ec",
+    /**
+     * Opcional: URL pública de un post o reel para incrustar la vista previa oficial de Instagram.
+     * Ejemplo: https://www.instagram.com/reel/XXXXXXXXXXX/
+     * Si no se define, se muestra una tarjeta tipo perfil con enlace al canal.
+     */
+    embedPermalink: "",
   },
   facebook: {
     pageName: "Logistic Fire & Rescue",
@@ -68,40 +70,17 @@ export const site = {
     { label: "Línea 2", tel: "+5932071594", display: "2071-594" },
   ],
 
-  /** Cabecera · #servicios (un solo bloque). */
-  servicesHeadingKicker: "Capacidades integradas",
-  servicesHeadingTitle: "Departamentos de confección institucional",
+  /** Cabecera · #servicios (breve; el detalle está en cada departamento). */
+  servicesHeadingKicker: "Departamentos",
+  servicesHeadingTitle: "Ceremonial, táctico e industrial",
   servicesHeadingLead:
-    "Un único taller coordina muestras, escalado de lote y logística nacional: formal, operativo y ceremonial con la misma exigencia de calidad.",
-
-  services: [
-    {
-      title: "Uniformes militares y policiales",
-      description:
-        "Confección a medida institucional, acabados formales y piezas tácticas con control de calidad.",
-    },
-    {
-      title: "Bomberos y rescate",
-      description:
-        "Prendas de trabajo robustas, alta visibilidad y equipamiento alineado a normas operativas.",
-    },
-    {
-      title: "Gorras e insignias",
-      description:
-        "Bordados, galones, escudos y detalles metálicos con presentación ceremonial impecable.",
-    },
-    {
-      title: "Ropa institucional e industrial",
-      description:
-        "Uniformes corporativos, trabajo y seguridad industrial con durabilidad y estética uniforme.",
-    },
-  ],
+    "Un solo canal ejecutivo para muestras, escalado de lote y entrega en Ecuador.",
 
   /** Bloque de cabecera · sección catálogo / galería (#galeria). */
-  galleryHeadingKicker: "Portafolio institucional",
-  galleryHeadingTitle: "Catálogo de referencias de producción",
+  galleryHeadingKicker: "Referencias de taller",
+  galleryHeadingTitle: "Catálogo fotográfico de producción",
   galleryHeadingLead:
-    "Documentación visual de lotes reales: uniformidad ceremonial, piezas operativas y detalle en insignias. La misma claridad expositiva que esperas en catálogos sectoriales de alto nivel, aplicada a tus entregas en Ecuador.",
+    "Vistas de lote real para homologación visual y cotización institucional.",
 
   brochurePdf: "/docs/logistic-catalogo.pdf",
 } as const;
